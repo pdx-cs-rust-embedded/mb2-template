@@ -1,0 +1,10 @@
+[build]
+target = "thumbv7em-none-eabihf"
+
+# For micro:bit v2
+[target.thumbv7em-none-eabihf]
+runner = "probe-run --chip nRF52833_xxAA"
+rustflags = [
+  "-C", "linker=rust-lld",
+  "-C", "link-arg=-Tlink.x",
+]
