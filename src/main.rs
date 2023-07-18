@@ -6,7 +6,10 @@ use panic_rtt_target as _;
 
 use core::cell::RefCell;
 
-use cortex_m::interrupt::Mutex;
+use cortex_m::{
+    asm,
+    interrupt::Mutex,
+};
 use cortex_m_rt::entry;
 use microbit::{
     board::Board,
@@ -50,7 +53,8 @@ fn main() -> ! {
     });
 
     loop {
-        continue;
+        asm::wfi();
+        rprintln!("got interrupt");
     }
 }
 
@@ -60,14 +64,14 @@ fn main() -> ! {
 fn GPIOTE() {
     /* Enter critical section */
     cortex_m::interrupt::free(|cs| {
-        rprintln!("Interrupt");
+        rprintln!("interrupt");
         if let Some(gpiote) = GPIO.borrow(cs).borrow().as_ref() {
             let buttonapressed = gpiote.channel0().is_event_triggered();
             let buttonbpressed = gpiote.channel1().is_event_triggered();
 
             /* Print buttons to the serial console */
             rprintln!(
-                "Button pressed {:?}",
+                "button pressed {:?}",
                 match (buttonapressed, buttonbpressed) {
                     (false, false) => "",
                     (true, false) => "A",
