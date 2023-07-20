@@ -1,5 +1,5 @@
 [package]
-name = "gpio-hal-printbuttons"
+name = ""
 version = "0.1.0"
 edition = "2021"
 
@@ -11,7 +11,3 @@ rtt-target = "0.4.0"
 [dependencies.panic-rtt-target]
 version = "0.1"
 features = ["cortex-m"]
-
-[dependencies.cortex-m]
-version = "0.7"
-features = ["inline-asm", "critical-section-single-core"]
