@@ -11,7 +11,7 @@ repository](https://docs.github.com/en/repositories/creating-and-managing-reposi
       rustup target add thumbv7em-none-eabihf
       rustup component add llvm-tools
       cargo install cargo-binutils
-      cargo install probe-rs --features cli
+      cargo install --locked probe-rs-tools
 
 3. Edit this `README.md`, the `Cargo.toml` and the stuff in
    `src/` to get the names right and the template to what
