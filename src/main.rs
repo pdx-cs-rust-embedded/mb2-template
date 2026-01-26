@@ -12,7 +12,6 @@ use microbit::board::Board;
 #[entry]
 fn main() -> ! {
     rtt_init_print!();
-    let _board = Board::take().unwrap();
     rprintln!("Hello world!", counter);
 }
 
