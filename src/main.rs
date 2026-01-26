@@ -1,6 +1,5 @@
 #![no_main]
 #![no_std]
-
 {% if starter_type == "Counter" %}
 use panic_rtt_target as _;
 use rtt_target::{rprintln, rtt_init_print};
@@ -19,8 +18,6 @@ fn main() -> ! {
     }
 }
 {% endif %}
-
-
 {% if starter_type == "Blinky" %}
 // https://github.com/pdx-cs-rust-embedded/blinky-rs/
 use cortex_m_rt::entry;
