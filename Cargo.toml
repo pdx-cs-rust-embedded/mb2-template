@@ -20,11 +20,6 @@ features = ["inline-asm", "critical-section-single-core"]
 
 {% if starter_type == "Blinky" %}
 
-[package]
-name = "{{project-name}}"
-version = "0.1.0"
-edition = "2024"
-
 [dependencies]
 cortex-m-rt = "0.7"
 embedded-hal = "1.0.0"
