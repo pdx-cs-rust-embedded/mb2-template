@@ -1,5 +1,7 @@
+{% if starter_type == "Hello world" %}
+
 [package]
-name = "mb2-template"
+name = "{{project-name}}"
 version = "0.1.0"
 edition = "2024"
 
@@ -12,3 +14,30 @@ rtt-target = "0.6"
 [dependencies.cortex-m]
 version = "0.7"
 features = ["inline-asm", "critical-section-single-core"]
+
+{% endif %}
+
+
+
+{% if starter_type == "Blinky" %}
+
+[package]
+name = "{{project-name}}"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cortex-m-rt = "0.7"
+embedded-hal = "1.0.0"
+microbit-v2 = "0.16.0"
+panic-rtt-target = "0.2.0"
+rtt-target = "0.6.2"
+
+[dependencies.cortex-m]
+version = "0.7.7"
+features = ["critical-section-single-core"]
+
+[profile.release]
+debug = true
+
+{% endif %}
