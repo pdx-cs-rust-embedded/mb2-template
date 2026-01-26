@@ -8,4 +8,4 @@ halt_afterwards = false
 enabled = true
 
 [default.gdb]
-enabled = false
+enabled = {{gdb_enabled}}
