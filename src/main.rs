@@ -2,6 +2,7 @@
 #![no_std]
 
 {% if starter_type == "Hello world" %}
+    
 use panic_rtt_target as _;
 use rtt_target::{rprintln, rtt_init_print};
 
@@ -23,6 +24,7 @@ fn main() -> ! {
 
 
 {% if starter_type == "Blinky" %}
+    
 // https://github.com/pdx-cs-rust-embedded/blinky-rs/
 use cortex_m_rt::entry;
 use embedded_hal::{digital::OutputPin, delay::DelayNs};
@@ -67,4 +69,5 @@ fn init() -> ! {
         timer.delay_ms(500);
     }
 }
+
 {% endif %}
