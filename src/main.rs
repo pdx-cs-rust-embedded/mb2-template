@@ -1,8 +1,7 @@
 #![no_main]
 #![no_std]
 
-{% if starter_type == "Hello world" %}
-    
+{% if starter_type == "Counter" %}
 use panic_rtt_target as _;
 use rtt_target::{rprintln, rtt_init_print};
 
@@ -12,14 +11,17 @@ use microbit::board::Board;
 #[entry]
 fn main() -> ! {
     rtt_init_print!();
-    rprintln!("Hello world!", counter);
+    let _board = Board::take().unwrap();
+    let mut counter = 0u64;
+    loop {
+        rprintln!("{}", counter);
+        counter += 1;
+    }
 }
-
 {% endif %}
 
 
 {% if starter_type == "Blinky" %}
-    
 // https://github.com/pdx-cs-rust-embedded/blinky-rs/
 use cortex_m_rt::entry;
 use embedded_hal::{digital::OutputPin, delay::DelayNs};
