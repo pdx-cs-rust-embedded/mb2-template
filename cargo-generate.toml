@@ -1,2 +1,2 @@
 [placeholders]
-
+starter_type = { prompt = "Starter type", choices = ["Blinky", "Hello world"], default = "Blinky", type = "string" }
