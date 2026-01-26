@@ -13,11 +13,7 @@ use microbit::board::Board;
 fn main() -> ! {
     rtt_init_print!();
     let _board = Board::take().unwrap();
-    let mut counter = 0u64;
-    loop {
-        rprintln!("{}", counter);
-        counter += 1;
-    }
+    rprintln!("Hello world!", counter);
 }
 
 {% endif %}
