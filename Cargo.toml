@@ -1,9 +1,10 @@
-{% if starter_type == "Hello world" %}
 
 [package]
 name = "{{project-name}}"
 version = "0.1.0"
 edition = "2024"
+
+{% if starter_type == "Counter" %}
 
 [dependencies]
 cortex-m-rt = "0.7"
@@ -16,8 +17,6 @@ version = "0.7"
 features = ["inline-asm", "critical-section-single-core"]
 
 {% endif %}
-
-
 
 {% if starter_type == "Blinky" %}
 
