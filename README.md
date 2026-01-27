@@ -1,5 +1,8 @@
 # mb2-template: MicroBit 2 Rust embedded project template
 
+*[A version of this as a [`cargo-generate`](https://cargo-generate.github.io/cargo-generate/) template is
+available on the `cargo-generate` branch in this repo.]*
+
 To use this [Github template
 repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template):
 
